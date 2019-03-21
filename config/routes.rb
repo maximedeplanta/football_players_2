@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "leagues#index"
   # Routes for the Player resource:
 
   # CREATE
