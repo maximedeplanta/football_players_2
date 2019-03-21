@@ -1,6 +1,6 @@
 class ClubsController < ApplicationController
   def index
-    @clubs = Club.all
+    @clubs = Club.page(params[:page]).per(10)
 
     render("club_templates/index.html.erb")
   end

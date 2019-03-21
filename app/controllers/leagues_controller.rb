@@ -1,6 +1,6 @@
 class LeaguesController < ApplicationController
   def index
-    @leagues = League.all
+    @leagues = League.page(params[:page]).per(10)
 
     render("league_templates/index.html.erb")
   end
