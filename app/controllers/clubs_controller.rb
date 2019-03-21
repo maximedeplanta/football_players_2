@@ -55,6 +55,14 @@ class ClubsController < ApplicationController
     end
   end
 
+  def destroy_row_from_league
+    @club = Club.find(params.fetch("id_to_remove"))
+
+    @club.destroy
+
+    redirect_to("/leagues/#{@club.league_id}", notice: "Club deleted successfully.")
+  end
+
   def destroy_row
     @club = Club.find(params.fetch("id_to_remove"))
 

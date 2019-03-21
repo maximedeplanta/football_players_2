@@ -57,6 +57,14 @@ class PlayersController < ApplicationController
     end
   end
 
+  def destroy_row_from_club
+    @player = Player.find(params.fetch("id_to_remove"))
+
+    @player.destroy
+
+    redirect_to("/clubs/#{@player.club_id}", notice: "Player deleted successfully.")
+  end
+
   def destroy_row
     @player = Player.find(params.fetch("id_to_remove"))
 
