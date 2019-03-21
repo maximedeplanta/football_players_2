@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Player #<%= @player.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/players" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link player start -->
+      <div class="col">
+        <a href="/players/<%= @player.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit player
+        </a>
+      </div>
+      <!-- Edit link player end -->
+
+      <!-- Delete link player start -->
+      <div class="col">
+        <a href="/delete_player/<%= @player.id %>" class="btn btn-block btn-outline-secondary">
+          Delete player
+        </a>
+      </div>
+      <!-- Delete link player end -->
+    </div>
+
+    <dl>
+      <dt>
+        Club
+      </dt>
+      <!-- Display club_id start -->
+      <dd>
+        <%= @player.club_id %>
+      </dd>
+      <!-- Display club_id end -->
+
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @player.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Position
+      </dt>
+      <!-- Display position start -->
+      <dd>
+        <%= @player.position %>
+      </dd>
+      <!-- Display position end -->
+
+      <dt>
+        Level
+      </dt>
+      <!-- Display level start -->
+      <dd>
+        <%= @player.level %>
+      </dd>
+      <!-- Display level end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@player.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@player.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
