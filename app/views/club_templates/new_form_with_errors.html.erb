@@ -27,7 +27,7 @@
     </label>
 
     <!-- Input for league_id start -->
-    <input type="text" id="league_id" name="league_id" class="form-control" value="<%= @club.league_id %>">
+    <%= select_tag(:league_id, options_from_collection_for_select(League.all, :id, :name, @club.league_id), :class => "form-control") %>
     <!-- Input for league_id end -->
   </div>
   <!-- Label and input for league_id end -->
