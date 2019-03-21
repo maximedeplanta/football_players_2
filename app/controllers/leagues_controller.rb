@@ -1,6 +1,7 @@
 class LeaguesController < ApplicationController
   def index
-    @leagues = League.page(params[:page]).per(10)
+    @q = League.ransack(params[:q])
+    @leagues = @q.result(:distinct => true).includes(:clubs).page(params[:page]).per(10)
 
     render("league_templates/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class PlayersController < ApplicationController
   def index
-    @players = Player.page(params[:page]).per(10)
+    @q = Player.ransack(params[:q])
+    @players = @q.result(:distinct => true).includes(:club).page(params[:page]).per(10)
 
     render("player_templates/index.html.erb")
   end
