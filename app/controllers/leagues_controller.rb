@@ -6,6 +6,7 @@ class LeaguesController < ApplicationController
   end
 
   def show
+    @club = Club.new
     @league = League.find(params.fetch("id_to_display"))
 
     render("league_templates/show.html.erb")

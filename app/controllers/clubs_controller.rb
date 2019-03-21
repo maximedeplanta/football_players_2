@@ -6,6 +6,7 @@ class ClubsController < ApplicationController
   end
 
   def show
+    @player = Player.new
     @club = Club.find(params.fetch("id_to_display"))
 
     render("club_templates/show.html.erb")
@@ -28,6 +29,22 @@ class ClubsController < ApplicationController
       @club.save
 
       redirect_back(:fallback_location => "/clubs", :notice => "Club created successfully.")
+    else
+      render("club_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_league
+    @club = Club.new
+
+    @club.league_id = params.fetch("league_id")
+    @club.name = params.fetch("name")
+    @club.level = params.fetch("level")
+
+    if @club.valid?
+      @club.save
+
+      redirect_to("/leagues/#{@club.league_id}", notice: "Club created successfully.")
     else
       render("club_templates/new_form_with_errors.html.erb")
     end
