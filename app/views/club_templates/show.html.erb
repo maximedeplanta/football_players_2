@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Club #<%= @club.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/clubs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link club start -->
+      <div class="col">
+        <a href="/clubs/<%= @club.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit club
+        </a>
+      </div>
+      <!-- Edit link club end -->
+
+      <!-- Delete link club start -->
+      <div class="col">
+        <a href="/delete_club/<%= @club.id %>" class="btn btn-block btn-outline-secondary">
+          Delete club
+        </a>
+      </div>
+      <!-- Delete link club end -->
+    </div>
+
+    <dl>
+      <dt>
+        League
+      </dt>
+      <!-- Display league_id start -->
+      <dd>
+        <%= @club.league_id %>
+      </dd>
+      <!-- Display league_id end -->
+
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @club.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Level
+      </dt>
+      <!-- Display level start -->
+      <dd>
+        <%= @club.level %>
+      </dd>
+      <!-- Display level end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@club.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@club.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

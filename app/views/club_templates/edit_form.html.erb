@@ -1,0 +1,56 @@
+<h1>
+  Edit club #<%= @club.id %>
+</h1>
+
+<hr>
+
+<!-- Form club start -->
+<form action="/update_club/<%= @club.id %>" method="post">
+<!-- Form club end -->
+
+  <!-- Label and input for league_id start -->
+  <div class="form-group">
+    <label for="league_id">
+      League
+    </label>
+
+    <!-- Input for league_id start -->
+    <input type="text" id="league_id" name="league_id" class="form-control" value="<%= @club.league_id %>">
+    <!-- Input for league_id end -->
+  </div>
+  <!-- Label and input for league_id end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @club.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for level start -->
+  <div class="form-group">
+    <label for="level">
+      Level
+    </label>
+
+    <!-- Input for level start -->
+    <input type="text" id="level" name="level" class="form-control" value="<%= @club.level %>">
+    <!-- Input for level end -->
+  </div>
+  <!-- Label and input for level end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update club
+  </button>
+</form>
+
+<hr>
+
+<a href="/clubs">
+  Go back
+</a>
