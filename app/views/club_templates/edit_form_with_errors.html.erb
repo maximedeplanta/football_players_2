@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @club.errors.any? %>
   <% @club.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,45 +12,31 @@
 
 <hr>
 
-<!-- Form club start -->
 <form action="/update_club/<%= @club.id %>" method="post">
-<!-- Form club end -->
 
-  <!-- Label and input for league_id start -->
   <div class="form-group">
     <label for="league_id">
       League
     </label>
 
-    <!-- Input for league_id start -->
     <%= select_tag(:league_id, options_from_collection_for_select(League.all, :id, :name, @club.league_id), :class => "form-control") %>
-    <!-- Input for league_id end -->
   </div>
-  <!-- Label and input for league_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @club.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for level start -->
   <div class="form-group">
     <label for="level">
       Level
     </label>
 
-    <!-- Input for level start -->
     <input type="text" id="level" name="level" class="form-control" value="<%= @club.level %>">
-    <!-- Input for level end -->
   </div>
-  <!-- Label and input for level end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update club

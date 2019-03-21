@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @player.present? %>
   <% if @player.errors.any? %>
     <% @player.errors.full_messages.each do |message| %>
@@ -16,57 +15,39 @@
 
 <hr>
 
-<!-- Form player start -->
 <form action="/create_player" method="post">
-<!-- Form player end -->
 
-  <!-- Label and input for club_id start -->
   <div class="form-group">
     <label for="club_id">
       Club
     </label>
 
-    <!-- Input for club_id start -->
     <%= select_tag(:club_id, options_from_collection_for_select(Club.all, :id, :league_id, @player.club_id), :class => "form-control") %>
-    <!-- Input for club_id end -->
   </div>
-  <!-- Label and input for club_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @player.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for position start -->
   <div class="form-group">
     <label for="position">
       Position
     </label>
 
-    <!-- Input for position start -->
     <input type="text" id="position" name="position" class="form-control" value="<%= @player.position %>">
-    <!-- Input for position end -->
   </div>
-  <!-- Label and input for position end -->
 
-  <!-- Label and input for level start -->
   <div class="form-group">
     <label for="level">
       Level
     </label>
 
-    <!-- Input for level start -->
     <input type="text" id="level" name="level" class="form-control" value="<%= @player.level %>">
-    <!-- Input for level end -->
   </div>
-  <!-- Label and input for level end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create player

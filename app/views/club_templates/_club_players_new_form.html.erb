@@ -1,47 +1,30 @@
-<!-- Form player start -->
 <form action="/create_player_from_club" method="post">
-<!-- Form player end -->
 
-  <!-- Label and input for club_id start -->
-  <!-- Input for club_id start -->
   <input type="hidden" name="club_id" value="<%= @club.id %>">
-  <!-- Input for club_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @player.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for position start -->
   <div class="form-group">
     <label for="position">
       Position
     </label>
 
-    <!-- Input for position start -->
     <input type="text" id="position" name="position" class="form-control" value="<%= @player.position %>">
-    <!-- Input for position end -->
   </div>
-  <!-- Label and input for position end -->
 
-  <!-- Label and input for level start -->
   <div class="form-group">
     <label for="level">
       Level
     </label>
 
-    <!-- Input for level start -->
     <input type="text" id="level" name="level" class="form-control" value="<%= @player.level %>">
-    <!-- Input for level end -->
   </div>
-  <!-- Label and input for level end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create player

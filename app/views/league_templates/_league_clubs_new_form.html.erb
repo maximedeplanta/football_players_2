@@ -1,35 +1,22 @@
-<!-- Form club start -->
 <form action="/create_club_from_league" method="post">
-<!-- Form club end -->
 
-  <!-- Label and input for league_id start -->
-  <!-- Input for league_id start -->
   <input type="hidden" name="league_id" value="<%= @league.id %>">
-  <!-- Input for league_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @club.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for level start -->
   <div class="form-group">
     <label for="level">
       Level
     </label>
 
-    <!-- Input for level start -->
     <input type="text" id="level" name="level" class="form-control" value="<%= @club.level %>">
-    <!-- Input for level end -->
   </div>
-  <!-- Label and input for level end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create club
