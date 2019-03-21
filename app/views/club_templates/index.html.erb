@@ -62,7 +62,11 @@
 
         <!-- Display club.league_id start -->
         <td>
-          <%= club.league.name %>
+          <% if club.league.present? %>
+            <a href="/leagues/<%= club.league.id %>">
+              <%= club.league.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display club.league_id end -->
 

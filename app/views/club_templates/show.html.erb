@@ -34,7 +34,11 @@
       </dt>
       <!-- Display league_id start -->
       <dd>
-        <%= @club.league_id %>
+        <% if @club.league.present? %>
+          <a href="/leagues/<%= @club.league_id %>">
+            <%= @club.league.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display league_id end -->
 
